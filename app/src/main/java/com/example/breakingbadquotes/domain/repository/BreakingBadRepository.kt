@@ -1,4 +1,4 @@
-package com.example.breakingbadquotes.data.repository
+package com.example.breakingbadquotes.domain.repository
 
 import com.example.breakingbadquotes.data.entities.Quote
 import io.reactivex.rxjava3.core.Observable
