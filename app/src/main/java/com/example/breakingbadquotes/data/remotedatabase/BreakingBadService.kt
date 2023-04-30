@@ -1,5 +1,6 @@
 package com.example.breakingbadquotes.data.remotedatabase
 
+import com.example.breakingbadquotes.data.entities.Quote
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 

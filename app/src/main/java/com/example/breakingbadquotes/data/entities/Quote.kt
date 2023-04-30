@@ -1,4 +1,4 @@
-package com.example.breakingbadquotes.data.remotedatabase
+package com.example.breakingbadquotes.data.entities
 
 data class Quote(
     val quote: String,
