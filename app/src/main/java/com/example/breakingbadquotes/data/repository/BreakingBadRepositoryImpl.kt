@@ -1,7 +1,7 @@
 package com.example.breakingbadquotes.data.repository
 
-import com.example.breakingbadquotes.data.remotedatabase.BreakingBadService
 import com.example.breakingbadquotes.data.entities.Quote
+import com.example.breakingbadquotes.data.remotedatabase.BreakingBadService
 import com.example.breakingbadquotes.domain.repository.BreakingBadRepository
 import io.reactivex.rxjava3.core.Observable
 
@@ -15,5 +15,4 @@ class BreakingBadRepositoryImpl(
     override suspend fun getQuoteWithCoroutines(): List<Quote> {
         return breakingBadService.getQuotesWithCoroutines()
     }
-
 }
