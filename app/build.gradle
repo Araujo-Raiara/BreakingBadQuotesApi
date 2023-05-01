@@ -56,5 +56,11 @@ dependencies {
     // RxJava3
     implementation("io.reactivex.rxjava3:rxjava:$rxjava_version")
 
+    // RxKotlin
+    implementation("io.reactivex.rxjava3:rxkotlin:$rxkotlin_version")
+
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodelscope_version")
 
 }

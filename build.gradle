@@ -5,6 +5,9 @@ buildscript {
         moshi_version = '1.14.0'
         lifecycle_version = '2.6.1'
         rxjava_version = '3.1.6'
+        rxkotlin_version = '3.0.1'
+        coroutines_version = '1.6.4'
+        viewmodelscope_version = '2.4.0'
     }
 }
 plugins {
