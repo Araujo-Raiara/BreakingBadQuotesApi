@@ -1,12 +1,18 @@
 package com.example.breakingbadquotes.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.breakingbadquotes.R
+import androidx.appcompat.app.AppCompatActivity
+import com.example.breakingbadquotes.databinding.ActivityMainBinding
+import com.example.breakingbadquotes.ui.viewmodel.BreakingBadViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
+
+    private val breakingBadViewModel: BreakingBadViewModel by viewModel()
+
+    lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
     }
 }

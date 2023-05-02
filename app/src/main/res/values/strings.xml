@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BreakingBadQuotes</string>
+    <string name="load_coroutines">Load/Coroutines</string>
+    <string name="load_rxjava">Load/RxJava</string>
 </resources>
