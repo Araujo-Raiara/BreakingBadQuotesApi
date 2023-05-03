@@ -1,11 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id("com.google.devtools.ksp").version("1.6.10-1.0.4")
+
 }
 
 android {
     namespace 'com.example.breakingbadquotes'
     compileSdk 33
+
+    viewBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.example.breakingbadquotes"
@@ -48,6 +54,9 @@ dependencies {
     // Moshi
     implementation("com.squareup.retrofit2:converter-moshi:$retrofit_version")
     implementation("com.squareup.moshi:moshi:$moshi_version")
+    implementation("com.squareup.moshi:moshi-kotlin:$moshi_version")
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:$moshi_version")
+
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
     // RxJava Adapter
@@ -58,6 +67,9 @@ dependencies {
 
     // RxKotlin
     implementation("io.reactivex.rxjava3:rxkotlin:$rxkotlin_version")
+
+    // Koin
+    implementation "io.insert-koin:koin-android:$koin_version"
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")
