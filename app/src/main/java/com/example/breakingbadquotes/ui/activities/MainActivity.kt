@@ -54,8 +54,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun onSuccess(quotes: List<Quote>) {
         hideProgressBar()
-        binding.tvQuote.text = getString(R.string.text_quote, quotes[0].quote)
-        binding.tvAuthor.text = quotes[0].author
+        binding.tvQuote.text = getString(R.string.text_quote, quotes.first().quote)
+        binding.tvAuthor.text = quotes.first().author
     }
 
     private fun loading() {
