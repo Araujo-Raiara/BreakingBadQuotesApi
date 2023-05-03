@@ -5,6 +5,8 @@ import com.example.breakingbadquotes.data.remotedatabase.BreakingBadService
 import com.example.breakingbadquotes.data.repository.BreakingBadRepositoryImpl
 import com.example.breakingbadquotes.domain.repository.BreakingBadRepository
 import com.example.breakingbadquotes.ui.viewmodel.BreakingBadViewModel
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -16,8 +18,9 @@ val baseNetwork = module {
         get<Retrofit>().create(BreakingBadService::class.java)
     }
     single<Retrofit> {
+        val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
         Retrofit.Builder().baseUrl(BASE_URL)
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build()
     }

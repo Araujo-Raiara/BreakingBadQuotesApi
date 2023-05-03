@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_small">10dp</dimen>
+    <dimen name="space_large">44dp</dimen>
+    <dimen name="txt_size">20sp</dimen>
+    <dimen name="subtitle_size">25sp</dimen>
+    <dimen name="size_pb">200dp</dimen>
+    <dimen name="min_size">50dp</dimen>
+</resources>

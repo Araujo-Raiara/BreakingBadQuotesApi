@@ -19,6 +19,7 @@ class BreakingBadViewModel(
     private lateinit var disposable: Disposable
 
     fun getQuoteWithRxJava3() {
+        _listQuote.postValue(Response.Loading)
         disposable = breakingBadRepository.getQuoteWithRxJava3()
             .subscribeBy(
                 onSuccess = { _listQuote.postValue(Response.OnSuccess(it)) },
@@ -27,6 +28,7 @@ class BreakingBadViewModel(
     }
 
     fun getQuoteWithCoroutines() {
+        _listQuote.postValue(Response.Loading)
         viewModelScope.launch {
             try {
                 val response = breakingBadRepository.getQuoteWithCoroutines()
