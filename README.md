@@ -14,7 +14,7 @@
 - Moshi-kotlin
 
 <p align="center">
-  <img src="![image](https://user-images.githubusercontent.com/62944970/235991583-cde45618-5920-47de-9a4a-b46a21ca0bfe.png)" />
+  <img src="https://user-images.githubusercontent.com/62944970/235991583-cde45618-5920-47de-9a4a-b46a21ca0bfe.png" />
 </p>
 
 
