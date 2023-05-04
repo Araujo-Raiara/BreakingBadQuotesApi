@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     private fun handleError(throwable: Throwable) {
         hideProgressBar()
         Log.e(TAG, "Error loading quotes", throwable)
-        val errorMessage = "Não foi possível carregar os dados, tente novamente."
+        val errorMessage = getString(R.string.error_message)
         Toast.makeText(
             this,
             errorMessage,
