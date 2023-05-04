@@ -1,5 +1,6 @@
 package com.example.breakingbadquotes.ui.activities
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -15,20 +16,18 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MainActivity : AppCompatActivity() {
 
     private val breakingBadViewModel: BreakingBadViewModel by viewModel()
-
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        breakingBadViewModel.listQuote.observe(this) {
-            when (it) {
-                is Response.OnError -> onError(it.error)
-                is Response.OnSuccess -> onSuccess(it.listQuote)
-                is Response.Loading -> loading()
-            }
-        }
+        setupObservers()
+        setupListeners()
+    }
+
+    private fun setupListeners() {
         with(binding) {
             btnLoadRx.setOnClickListener {
                 hideViews()
@@ -42,23 +41,34 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun onError(e: Throwable) {
+    private fun setupObservers() {
+        breakingBadViewModel.listQuote.observe(this) { response ->
+            when (response) {
+                is Response.OnError -> handleError(response.error)
+                is Response.OnSuccess -> handleSuccess(response.listQuote)
+                is Response.Loading -> handleLoading()
+            }
+        }
+    }
+
+    private fun handleError(throwable: Throwable) {
         hideProgressBar()
-        e.localizedMessage?.let { Log.e("mainError", it) }
+        Log.e(TAG, "Error loading quotes", throwable)
+        val errorMessage = getString(R.string.error_message)
         Toast.makeText(
             this,
-            "Não foi possível carregar os dados, tente novamente",
+            errorMessage,
             Toast.LENGTH_LONG
         ).show()
     }
 
-    private fun onSuccess(quotes: List<Quote>) {
+    private fun handleSuccess(quotes: List<Quote>) {
         hideProgressBar()
         binding.tvQuote.text = getString(R.string.text_quote, quotes.first().quote)
         binding.tvAuthor.text = quotes.first().author
     }
 
-    private fun loading() {
+    private fun handleLoading() {
         binding.pbLoading.visibility = View.VISIBLE
     }
 
