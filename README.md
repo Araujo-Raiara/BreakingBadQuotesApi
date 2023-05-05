@@ -1,4 +1,6 @@
 # BreakingBadQuotesApi
+first... this is my best serie forever <3
+
  Simple app for demonstration of the use of the rxJava3 library and coroutines.
  This app uses Breaking Bad quotes API to retrieve some quotes of Breaking Bad.
 
