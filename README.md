@@ -1,4 +1,6 @@
 # BreakingBadQuotesApi
+ Test Resolution for hack week challenge 👾
+ 
  Simple app for demonstration of the use of the rxJava3 library and coroutines.
  This app uses Breaking Bad quotes API to retrieve some quotes of Breaking Bad.
 
