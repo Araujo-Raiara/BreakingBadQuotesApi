@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BreakingBadQuotes</string>
     <string name="load_coroutines">Load/Coroutines</string>
     <string name="load_rxjava">Load/RxJava</string>
-    <string name="text_quote" translatable="false">\"%s\"</string>
     <string name="text_start">This app uses coroutines and rxjava3.\nTo start click on one of the buttons</string>
 </resources>

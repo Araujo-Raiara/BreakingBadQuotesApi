@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BreakingBadQuotes</string>
+    <string name="load_coroutines">Carregar/Coroutines</string>
+    <string name="load_rxjava">Carregar/RxJava</string>
+    <string name="text_start">Esse app usa Corrotinas e RXJava.\nPara testar clique em um dos botōes</string>
+</resources>
